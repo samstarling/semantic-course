@@ -31,6 +31,24 @@ Turtle example of a list:
 
     :owlim2012 :registrants (:foo :bar :baz)
 
+### Inserting Data
+
+You know exactly what you want to put into the store.
+
+    INSERT DATA {
+      ou:barry foaf:givenName "Barry"
+    }
+
+But, triple stores aren't exactly that. They are quad-stores. You give a URI to a set of
+subject, predicate, object statements. This is called a *context*. So, data is managed
+in a named graph. For example:
+
+    INSERT DATA {
+      GRAPH <http://ontotext.com/ns#> {
+        onto:barry foaf:givenName "Barry"
+      }
+    }
+
 ### Reading
 Read up on:
 * Subqueries
