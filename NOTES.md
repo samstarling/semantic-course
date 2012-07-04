@@ -49,6 +49,17 @@ in a named graph. For example:
       }
     }
 
+Often when making annotations, you want to add provenance to them. For example:
+
+    :story :about :beckham
+
+Could go into a graph `:barry-2012`, but we want to say the annotations were made by Barry,
+then you could say:
+
+    :barry-2012 dc:creator "Joe Bloggs"
+
+So the quad is subject, predicate, object, graph.
+
 ### Reading
 Read up on:
 * Subqueries
