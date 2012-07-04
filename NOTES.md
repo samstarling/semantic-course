@@ -22,6 +22,15 @@
   * HTML markup contains RDF relationships
   * MusicBrainz makes use of this
 
+### Lists
+* In CONSTRUCT queries, order doesn't matter, because you're just constructing a graph
+* SELECT queries are ordered, and you can specify how to order them
+* If you want order in a graph, use a *list*
+
+Turtle example of a list:
+
+    :owlim2012 :registrants (:foo :bar :baz)
+
 ### Reading
 Read up on:
 * Subqueries
