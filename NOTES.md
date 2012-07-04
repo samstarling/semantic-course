@@ -21,3 +21,4 @@
 * Use RDFa
   * HTML markup contains RDF relationships
   * MusicBrainz makes use of this
+

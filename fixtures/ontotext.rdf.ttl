@@ -1,0 +1,41 @@
+@prefix : <http://www.ontotext.com/people#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+:Trainer rdfs:subClassOf foaf:Person .
+
+:reportsTo rdfs:subPropertyOf org:reportsTo, foaf:knows .
+
+:barry1 a :Trainer ;
+  rdfs:comment 
+"""Barry Bishop is the Product Manager for the OWLIM family of Semantic Repositories. Barry is managing Ontotext's partnership with landmark OWLIM users such as the BBC and The Press Association.
+
+He has over 20 years experience in software engineering and has worked with semantic technologies since 2007, particularly in the areas of knowledge representation and reasoning. He has contributed to several European funded research projects including LarKC and SOA4All. Previously Barry led the IRIS research unit at the Semantic Technology Institute at the University of Innsbruck.""" ;
+  foaf:depiction <https://confluence.ontotext.com/download/thumbnails/6947484/barry1.png> ;
+  foaf:mbox <mailto:barry.bishop@ontotext.com> ;
+  foaf:givenName "Barry" ;
+  foaf:nick "Baz" ;
+  foaf:familyName "Bishop" ;
+  foaf:based_near [a wgs84:Point; wgs84:lat 47.260; wgs84:long 11.347] ;
+  :reportsTo :naso .
+
+:barry2 a :Trainer;
+  rdfs:comment
+"""Dr. Barry Norton holds a PhD in Computer Science from the University of Sheffield and has worked on Semantic Web topics at a number of the leading European universities, including The Open University, STI Innsbruck and Karlsruhe Institute of Technology. He has been actively involved with semantic technology training at various times over the past 10 years, and been on the organising committee of a number of summer schools (SSSW, IEEE SSSC, ESWC, Karlsruhe Summer School on Service Research) and tutorials.
+
+His IT experience dates back some 15 years, during which time he has been involved in bespoke database consultancy and development (Oracle, SQL Server, Progress) and has been Lead Developer on Windows package software. He is an active member of the LinkedBrainz linked data project.""" ;
+  foaf:mbox <mailto:barry.norton@ontotext.com> ;
+  foaf:givenName "Barry" ;
+  foaf:familyName "Norton" ;
+  foaf:based_near [a wgs84:Point; wgs84:lat 51.152; wgs84:long -0.120] ;
+  :reportsTo :naso .
+
+:naso rdfs:comment 
+"""Atanas Kiryakov is head of Ontotext lab (of Sirma Group) - an outstanding Semantic Web technology provider; the laboratory is involved in research projects for more than 80 MEuro. Kiryakov joined Sirma as a software engineer in 1993 to become partner and member of the board later on and found Ontotext in year 2000. His current research interests are in semantic annotation and search, large-scale semantic repositories and reasoning, ontology design, information extraction. He is author of more than 20 articles and book chapters.""" ;
+  foaf:mbox <mailto:naso@ontotext.com> ;
+  foaf:givenName "Atanas" ;
+  foaf:nick "Naso" ;
+  foaf:familyName "Kiryakov" ;
+  foaf:based_near [a wgs84:Point; wgs84:lat 42.687; wgs84:long 23.344] .
