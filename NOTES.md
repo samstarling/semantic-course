@@ -22,3 +22,13 @@
   * HTML markup contains RDF relationships
   * MusicBrainz makes use of this
 
+### Reading
+Read up on:
+* Subqueries
+* Negation
+* What's new in SPARQL 1.1
+
+### Links
+* http://factforge.net/
+* http://dbpedialite.org/
+* http://dbtune.org/musicbrainz/snorql/
