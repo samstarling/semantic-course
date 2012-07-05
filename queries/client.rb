@@ -12,14 +12,18 @@ result = sparql.query("""
   WHERE {
     ?brand a po:Brand ;
       po:series ?series ;
+      po:pid ?brand_pid ;
       dc:title ?brand_title .
     ?series a po:Series ;
       dc:title ?series_title ;
+      po:pid ?series_pid ;
       po:episode ?episode .
-    ?episode dc:title ?episode_title .
-  } LIMIT 10
+    ?episode dc:title ?episode_title ;
+      po:pid ?episode_pid .
+  } LIMIT 5
 """)
 
 result.each do |r|
-  puts "#{r[:brand_title]} (#{r[:series_title]}) - #{r[:episode_title]}"
+  puts "Brand: #{r[:brand_title]} (#{r[:brand_pid]})\nSeries: #{r[:series_title]} (#{r[:series_pid]})\nEpisode: #{r[:episode_title]} (#{r[:episode_pid]})\n---"
+  #puts r[:pid].inspect
 end
