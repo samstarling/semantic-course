@@ -8,11 +8,14 @@
     %br
     %input{"type"=>"submit"}
   %h2 Results
-  %table{"border"=>"1"}
-    %tr
-    - @query.first.each_name do |header|
-      %th= header
-    - @query.each do |solution|
+  - if @query == nil || @query.empty?
+    %p No results :(
+  - else
+    %table{"border"=>"1"}
       %tr
-        - solution.each_value do |value|
-          %td= value
+      - @query.first.each_name do |header|
+        %th= header
+      - @query.each do |solution|
+        %tr
+          - solution.each_value do |value|
+            %td= value
