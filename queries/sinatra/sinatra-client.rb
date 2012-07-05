@@ -12,6 +12,10 @@ get '/' do
   haml :form
 end
 
+get '/result' do
+  redirect '/'
+end
+
 post '/result' do
   sparql = SPARQL::Client.new("http://dbtune.org/bbc/programmes/sparql/")
   @raw_query = params[:query]

@@ -1,8 +1,17 @@
-%form{"action"=>"/result", "method"=>"post"}
-  %textarea{"cols"=>"100", "rows"=>"8", "name"=>"query"}
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    SELECT * WHERE {
-    ?s ?p ?o
-    } LIMIT 10
-  %input{"type"=>"submit"}
+%head
+  %style
+    textarea { font-family: 'Inconsolata'; font-size: 15px; }
+%body
+  %h2 Query
+  %form{"action"=>"/result", "method"=>"post"}
+    %textarea{"cols"=>"90", "rows"=>"10", "name"=>"query"}
+      PREFIX po: <http://purl.org/ontology/po/>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      SELECT ?pid ?label
+      WHERE {
+      ?uri po:category <http://www.bbc.co.uk/programmes/genres/factual/money#genre> ; 
+      rdfs:label ?label ;
+      po:pid ?pid .
+      } LIMIT 10
+    %br
+    %input{"type"=>"submit"}

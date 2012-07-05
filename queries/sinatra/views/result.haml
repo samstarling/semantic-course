@@ -1,15 +1,18 @@
-%form{"action"=>"/result", "method"=>"post"}
-  %textarea{"cols"=>"100", "rows"=>"8", "name"=>"query"}= @raw_query
-  %input{"type"=>"submit"}
-%h2 Results
-
-
-
-%table{"border"=>"1"}
-  %tr
-  - @query.first.each_name do |header|
-    %th= header
-  - @query.each do |solution|
+%head
+  %style
+    textarea { font-family: 'Inconsolata'; font-size: 15px; }
+%body
+  %h2 Query
+  %form{"action"=>"/result", "method"=>"post"}
+    %textarea{"cols"=>"90", "rows"=>"10", "name"=>"query"}= @raw_query
+    %br
+    %input{"type"=>"submit"}
+  %h2 Results
+  %table{"border"=>"1"}
     %tr
-      - solution.each_value do |value|
-        %td= value
+    - @query.first.each_name do |header|
+      %th= header
+    - @query.each do |solution|
+      %tr
+        - solution.each_value do |value|
+          %td= value
