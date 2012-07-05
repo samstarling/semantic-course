@@ -1,7 +1,5 @@
 # Day 1
 
-## Morning
-
 ### URIs
 * Should be human-readable, with a natural hierarchy
   * But this tends to be anglo-centric
@@ -84,3 +82,9 @@ Read up on:
 * http://factforge.net/
 * http://dbpedialite.org/
 * http://dbtune.org/musicbrainz/snorql/
+
+# Day 2
+
+### Read Up On
+* Google Refine
+
