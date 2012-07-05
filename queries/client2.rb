@@ -3,12 +3,13 @@ require 'awesome_print'
 
 require 'sparql/client'
 
-sparql = SPARQL::Client.new("http://dbpedia.org/sparql")
+sparql = SPARQL::Client.new("http://dbtune.org/bbc/programmes/sparql/")
 
-query = sparql.select
-  .where([RDF::URI("http://dbpedia.org/resource/Manchester"), :p, :o])
-  .limit(20)
+query = sparql.query('PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-query.each_solution do |solution|
-  puts solution.inspect
-end
+SELECT * WHERE {
+ ?s ?p ?o
+} LIMIT 10')
+
+puts query.inspect
